@@ -15,4 +15,19 @@ public class HtmlUtilTest {
     public void escapeメソッドでltがエスケープされることのテスト() {
         assertThat(HtmlUtil.escape("<"), is("&lt;"));
     }
+
+    @Test
+    public void escapeメソッドでgtがエスケープされることのテスト() {
+        assertThat(HtmlUtil.escape(">"), is("&gt;"));
+    }
+
+    @Test
+    public void escapeメソッドでダブルクォートがエスケープされることのテスト() {
+        assertThat(HtmlUtil.escape("\""), is("&quot;"));
+    }
+
+    @Test
+    public void escapeメソッドでアンドがエスケープされることのテスト() {
+        assertThat(HtmlUtil.escape("&"), is("&amp;"));
+    }
 }
