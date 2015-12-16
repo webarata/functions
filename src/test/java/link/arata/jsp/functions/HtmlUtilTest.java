@@ -45,4 +45,19 @@ public class HtmlUtilTest {
     public void newLineToBrメソッドで￥r￥nが正しく変換されること() {
         assertThat(HtmlUtil.newLineToBr("\r\n"), is("<br>"));
     }
+
+    @Test
+    public void newLineToBrメソッドで￥nが正しく変換されること() {
+        assertThat(HtmlUtil.newLineToBr("\n"), is("<br>"));
+    }
+
+    @Test
+    public void newLineToBrメソッドで￥rが正しく変換されること() {
+        assertThat(HtmlUtil.newLineToBr("\r"), is("<br>"));
+    }
+
+    @Test
+    public void newLineToBrメソッドで改行コード混ざった場合正しく変換されること() {
+        assertThat(HtmlUtil.newLineToBr("\r\n\r\r\n\n"), is("<br><br><br><br>"));
+    }
 }
