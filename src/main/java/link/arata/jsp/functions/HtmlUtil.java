@@ -28,7 +28,7 @@ public abstract class HtmlUtil {
      * 
      * @param value
      *            変換する文字列
-     * @return 返還後の文字列
+     * @return 変換後の文字列
      */
     public static String newLineToBr(String value) {
         value = value.replace("\r\n", "<br>");
@@ -36,5 +36,16 @@ public abstract class HtmlUtil {
         value = value.replace("\r", "<br>");
 
         return value;
+    }
+
+    /**
+     * 半角スペースを&amp;nbsp;に変化sんする。
+     * 
+     * @param value
+     *            変換する文字列
+     * @return 変換後の文字列
+     */
+    public static String blankToNbsp(String value) {
+        return value.replace(" ", "&nbsp;");
     }
 }

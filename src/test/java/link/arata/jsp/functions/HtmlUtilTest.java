@@ -60,4 +60,9 @@ public class HtmlUtilTest {
     public void newLineToBrメソッドで改行コード混ざった場合正しく変換されること() {
         assertThat(HtmlUtil.newLineToBr("\r\n\r\r\n\n"), is("<br><br><br><br>"));
     }
+
+    @Test
+    public void newLineToBrメソッドで半角スペースが正しく変換されること() {
+        assertThat(HtmlUtil.blankToNbsp("  "), is("&nbsp;&nbsp;"));
+    }
 }
