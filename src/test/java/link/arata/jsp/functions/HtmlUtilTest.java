@@ -90,4 +90,9 @@ public class HtmlUtilTest {
 	public void blankToNbspメソッドで複数行の場合に半角スペースが正しく変換されること() {
 		assertThat(HtmlUtil.blankToNbsp("  \n  "), is(" &nbsp;\n &nbsp;"));
 	}
+
+	@Test
+	public void blankToNbspメソッドで文字列混在の場合に半角スペースが正しく変換されること() {
+		assertThat(HtmlUtil.blankToNbsp("  \n  あいうえ テスト  テスト"), is(" &nbsp;\n &nbsp;あいうえ テスト &nbsp;テスト"));
+	}
 }
