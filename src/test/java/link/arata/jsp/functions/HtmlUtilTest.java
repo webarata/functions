@@ -82,7 +82,12 @@ public class HtmlUtilTest {
 	}
 
 	@Test
-	public void newLineToBrメソッドで半角スペースが正しく変換されること() {
+	public void blankToNbspメソッドで半角スペースが正しく変換されること() {
 		assertThat(HtmlUtil.blankToNbsp("  "), is(" &nbsp;"));
+	}
+
+	@Test
+	public void blankToNbspメソッドで複数行の場合に半角スペースが正しく変換されること() {
+		assertThat(HtmlUtil.blankToNbsp("  \n  "), is(" &nbsp;\n &nbsp;"));
 	}
 }
