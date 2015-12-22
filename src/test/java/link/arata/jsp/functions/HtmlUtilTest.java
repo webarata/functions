@@ -7,57 +7,57 @@ import org.junit.Test;
 
 public class HtmlUtilTest {
 	@Test
-	public void escapeメソッドの値が変わらないことのテスト() {
+	public void escapeメソッドの値が変わらないこと() {
 		assertThat(HtmlUtil.escape("あいうえお"), is("あいうえお"));
 	}
 
 	@Test
-	public void escapeメソッドでltがエスケープされることのテスト() {
+	public void escapeメソッドでltがエスケープされること() {
 		assertThat(HtmlUtil.escape("<"), is("&lt;"));
 	}
 
 	@Test
-	public void escapeメソッドで複数のltがエスケープされることのテスト() {
+	public void escapeメソッドで複数のltがエスケープされること() {
 		assertThat(HtmlUtil.escape("<<"), is("&lt;&lt;"));
 	}
 
 	@Test
-	public void escapeメソッドでgtがエスケープされることのテスト() {
+	public void escapeメソッドでgtがエスケープされること() {
 		assertThat(HtmlUtil.escape(">"), is("&gt;"));
 	}
 
 	@Test
-	public void escapeメソッドで複数のgtがエスケープされることのテスト() {
+	public void escapeメソッドで複数のgtがエスケープされること() {
 		assertThat(HtmlUtil.escape(">>"), is("&gt;&gt;"));
 	}
 
 	@Test
-	public void escapeメソッドでダブルクォートがエスケープされることのテスト() {
+	public void escapeメソッドでダブルクォートがエスケープされること() {
 		assertThat(HtmlUtil.escape("\""), is("&quot;"));
 	}
 
 	@Test
-	public void escapeメソッドで複数のダブルクォートがエスケープされることのテスト() {
+	public void escapeメソッドで複数のダブルクォートがエスケープされること() {
 		assertThat(HtmlUtil.escape("\"\""), is("&quot;&quot;"));
 	}
 
 	@Test
-	public void escapeメソッドでアンドがエスケープされることのテスト() {
+	public void escapeメソッドでアンドがエスケープされること() {
 		assertThat(HtmlUtil.escape("&"), is("&amp;"));
 	}
 
 	@Test
-	public void escapeメソッドで服薄のアンドがエスケープされることのテスト() {
+	public void escapeメソッドで服薄のアンドがエスケープされること() {
 		assertThat(HtmlUtil.escape("&&"), is("&amp;&amp;"));
 	}
 
 	@Test
-	public void escapeメソッドで複数の文字列が正しくエスケープされることのテスト() {
+	public void escapeメソッドで複数の文字列が正しくエスケープされること() {
 		assertThat(HtmlUtil.escape("<>\"&"), is("&lt;&gt;&quot;&amp;"));
 	}
 
 	@Test
-	public void escapeメソッドで通常の文字列も含んだテスト() {
+	public void escapeメソッドで通常の文字列も含んだ() {
 		assertThat(HtmlUtil.escape("<div>\"drag&drop\"</div>"), is("&lt;div&gt;&quot;drag&amp;drop&quot;&lt;/div&gt;"));
 	}
 
