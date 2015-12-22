@@ -62,23 +62,23 @@ public class HtmlUtilTest {
 	}
 
 	@Test
-	public void newLineToBrメソッドで￥r￥nが正しく変換されること() {
-		assertThat(HtmlUtil.newLineToBr("\r\n"), is("<br>"));
+	public void lineBreakToBrメソッドで￥r￥nが正しく変換されること() {
+		assertThat(HtmlUtil.lineBreakToBr("\r\n"), is("<br>"));
 	}
 
 	@Test
-	public void newLineToBrメソッドで￥nが正しく変換されること() {
-		assertThat(HtmlUtil.newLineToBr("\n"), is("<br>"));
+	public void lineBreakTToBrメソッドで￥nが正しく変換されること() {
+		assertThat(HtmlUtil.lineBreakToBr("\n"), is("<br>"));
 	}
 
 	@Test
-	public void newLineToBrメソッドで￥rが正しく変換されること() {
-		assertThat(HtmlUtil.newLineToBr("\r"), is("<br>"));
+	public void lineBreakTToBrメソッドで￥rが正しく変換されること() {
+		assertThat(HtmlUtil.lineBreakToBr("\r"), is("<br>"));
 	}
 
 	@Test
-	public void newLineToBrメソッドで改行コード混ざった場合正しく変換されること() {
-		assertThat(HtmlUtil.newLineToBr("\r\n\r\r\n\n"), is("<br><br><br><br>"));
+	public void lineBreakTToBrメソッドで改行コード混ざった場合正しく変換されること() {
+		assertThat(HtmlUtil.lineBreakToBr("\r\n\r\r\n\n"), is("<br><br><br><br>"));
 	}
 
 	@Test

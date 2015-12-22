@@ -30,7 +30,7 @@ public abstract class HtmlUtil {
 	 *            変換する文字列
 	 * @return 変換後の文字列
 	 */
-	public static String newLineToBr(String value) {
+	public static String lineBreakToBr(String value) {
 		value = value.replace("\r\n", "<br>");
 		value = value.replace("\n", "<br>");
 		value = value.replace("\r", "<br>");
