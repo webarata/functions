@@ -16,7 +16,7 @@ targetCompatibility = 1.6
 
 [compileJava, compileTestJava].each{
     it.options.encoding = 'UTF-8'
-    it.options.compilerArgs += ['-source', '1.6', '-target', '1.6']
+    it.options.compilerArgs += ['-source', '1.7', '-target', '1.7']
 }
 
 repositories {
