@@ -83,6 +83,6 @@ public class HtmlUtilTest {
 
 	@Test
 	public void newLineToBrメソッドで半角スペースが正しく変換されること() {
-		assertThat(HtmlUtil.blankToNbsp("  "), is("&nbsp;&nbsp;"));
+		assertThat(HtmlUtil.blankToNbsp("  "), is(" &nbsp;"));
 	}
 }
