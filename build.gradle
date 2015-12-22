@@ -1,6 +1,5 @@
 apply plugin: 'java'
 apply plugin: 'jacoco'
-apply plugin: 'com.github.kt3k.coveralls'
 
 buildscript {
     repositories {
@@ -37,3 +36,5 @@ jacocoTestReport {
         csv.enabled = true
     }
 }
+
+apply plugin: 'com.github.kt3k.coveralls'
