@@ -95,4 +95,14 @@ public class HtmlUtilTest {
 	public void blankToNbspメソッドで文字列混在の場合に半角スペースが正しく変換されること() {
 		assertThat(HtmlUtil.blankToNbsp("  \n  あいうえ テスト  テスト"), is(" &nbsp;\n &nbsp;あいうえ テスト &nbsp;テスト"));
 	}
+
+	@Test
+	public void urlToHrefメソッドでHTTPのURLが正しくアンカーに変換されること() {
+		assertThat(HtmlUtil.urlToHref("http://hoge.com"), is("<a href=\"http://hoge.com\">http://hoge.com</a>"));
+	}
+
+	@Test
+	public void urlToHrefメソッドでHTTPSのURLが正しくアンカーに変換されること() {
+		assertThat(HtmlUtil.urlToHref("https://hoge.com"), is("<a href=\"https://hoge.com\">https://hoge.com</a>"));
+	}
 }
