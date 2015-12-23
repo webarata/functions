@@ -105,4 +105,11 @@ public class HtmlUtilTest {
 	public void urlToHrefメソッドでHTTPSのURLが正しくアンカーに変換されること() {
 		assertThat(HtmlUtil.urlToHref("https://hoge.com"), is("<a href=\"https://hoge.com\">https://hoge.com</a>"));
 	}
+
+	@Test
+	public void urlToHrefメソッドで複数のHTTPのURLが正しくアンカーに変換されること() {
+		assertThat(HtmlUtil.urlToHref("http://hoge.comあいうえおhttp://foo.com"), is(
+				"<a href=\"http://hoge.com\">http://hoge.com</a>あいうえお<a href=\"http://foo.com\">http://foo.com</a>"));
+	}
+
 }
