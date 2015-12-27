@@ -18,4 +18,9 @@
   <function-class>link.arata.jsp.functions.HtmlUtil</function-class>
   <function-signature>java.langString lineBreakToBr(java.lang.String)</function-signature>
  </function>
+ <function>
+  <name>nbsp</name>
+  <function-class>link.arata.jsp.functions.HtmlUtil</function-class>
+  <function-signature>java.langString blankToNbsp(java.lang.String)</function-signature>
+ </function>
 </taglib>
