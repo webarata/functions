@@ -13,4 +13,9 @@
   <function-class>link.arata.jsp.functions.HtmlUtil</function-class>
   <function-signature>java.langString escape(java.lang.String)</function-signature>
  </function>
+ <function>
+  <name>br</name>
+  <function-class>link.arata.jsp.functions.HtmlUtil</function-class>
+  <function-signature>java.langString lineBreakToBr(java.lang.String)</function-signature>
+ </function>
 </taglib>
