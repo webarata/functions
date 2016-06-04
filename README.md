@@ -1,1 +1,1 @@
-# functions [![Build Status](https://travis-ci.org/webarata3/KExcelAPI.svg?branch=master)](https://travis-ci.org/webarata3/KExcelAPI) [![Build Status](https://travis-ci.org/webarata3/KExcelAPI.svg?branch=master)](https://travis-ci.org/webarata3/KExcelAPI)
+# functions [![Build Status](https://travis-ci.org/webarata3/KExcelAPI.svg?branch=master)](https://travis-ci.org/webarata3/KExcelAPI) [![Coverage Status](https://coveralls.io/repos/github/webarata3/functions/badge.svg?branch=master)](https://coveralls.io/github/webarata3/functions?branch=master)
