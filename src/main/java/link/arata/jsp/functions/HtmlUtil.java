@@ -43,9 +43,9 @@ public abstract class HtmlUtil {
     public static String blankToNbsp(String value) {
         return value.chars()
                 .mapToObj(ch -> Character.valueOf((char) ch).toString())
-                .reduce("", (c1, c2) -> (c1.endsWith(" ") && c2.equals(" "))
-                        ? c1 + "&nbsp;"
-                        : c1 + c2);
+                .reduce("", (s1, s2) -> (s1.endsWith(" ") && s2.equals(" "))
+                        ? s1 + "&nbsp;"
+                        : s1 + s2);
     }
 
     /**
