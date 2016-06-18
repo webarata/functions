@@ -4,7 +4,7 @@ package link.arata.jsp.functions;
  * HTML操作関連のユーティリティークラス
  * 
  * @author arata
- *
+ * 
  */
 public abstract class HtmlUtil {
     /**
@@ -15,13 +15,11 @@ public abstract class HtmlUtil {
      * @return HTMLエスケープしたあとの文字列
      */
     public static String escape(String value) {
-        value = value.replace("&", "&amp;");
-        value = value.replace("<", "&lt;");
-        value = value.replace(">", "&gt;");
-        value = value.replace("\"", "&quot;");
-        value = value.replace("'", "&#39;");
-
-        return value;
+        return value.replace("&", "&amp;")
+                .replace("<", "&lt;")
+                .replace(">", "&gt;")
+                .replace("\"", "&quot;")
+                .replace("'", "&#39;");
     }
 
     /**
@@ -32,11 +30,7 @@ public abstract class HtmlUtil {
      * @return 変換後の文字列
      */
     public static String lineBreakToBr(String value) {
-        value = value.replace("\r\n", "<br>");
-        value = value.replace("\n", "<br>");
-        value = value.replace("\r", "<br>");
-
-        return value;
+        return value.replace("\r\n", "<br>").replace("\n", "<br>").replace("\r", "<br>");
     }
 
     /**
