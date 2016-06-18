@@ -47,8 +47,13 @@ public class HtmlUtilTest {
     }
 
     @Test
-    public void escapeメソッドで服薄のアンドがエスケープされること() {
+    public void escapeメソッドで複数のアンドがエスケープされること() {
         assertThat(HtmlUtil.escape("&&"), is("&amp;&amp;"));
+    }
+
+    @Test
+    public void escapeメソッドでシングルクォートがエスケープされること() {
+        assertThat(HtmlUtil.escape("'"), is("&#39;"));
     }
 
     @Test

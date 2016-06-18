@@ -19,6 +19,7 @@ public abstract class HtmlUtil {
         value = value.replace("<", "&lt;");
         value = value.replace(">", "&gt;");
         value = value.replace("\"", "&quot;");
+        value = value.replace("'", "&#39;");
 
         return value;
     }
