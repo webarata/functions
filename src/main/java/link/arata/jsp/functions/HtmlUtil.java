@@ -15,10 +15,8 @@ public abstract class HtmlUtil {
      * @return HTMLエスケープしたあとの文字列
      */
     public static String escape(String value) {
-        return value.replace("&", "&amp;")
-                .replace("<", "&lt;")
-                .replace(">", "&gt;")
-                .replace("\"", "&quot;")
+        return value.replace("&", "&amp;").replace("<", "&lt;")
+                .replace(">", "&gt;").replace("\"", "&quot;")
                 .replace("'", "&#39;");
     }
 
@@ -30,7 +28,8 @@ public abstract class HtmlUtil {
      * @return 変換後の文字列
      */
     public static String lineBreakToBr(String value) {
-        return value.replace("\r\n", "<br>").replace("\n", "<br>").replace("\r", "<br>");
+        return value.replace("\r\n", "<br>").replace("\n", "<br>").replace("\r",
+                "<br>");
     }
 
     /**
@@ -42,22 +41,11 @@ public abstract class HtmlUtil {
      * @return 変換後の文字列
      */
     public static String blankToNbsp(String value) {
-        StringBuilder sb = new StringBuilder();
-        boolean first = true;
-        for (int i = 0; i < value.length(); i++) {
-            if (value.charAt(i) == ' ') {
-                if (first) {
-                    sb.append(' ');
-                    first = false;
-                } else {
-                    sb.append("&nbsp;");
-                }
-            } else {
-                first = true;
-                sb.append(value.charAt(i));
-            }
-        }
-        return sb.toString();
+        return value.chars()
+                .mapToObj(ch -> Character.valueOf((char) ch).toString())
+                .reduce("", (c1, c2) -> (c1.endsWith(" ") && c2.equals(" "))
+                        ? c1 + "&nbsp;"
+                        : c1 + c2);
     }
 
     /**
@@ -68,6 +56,8 @@ public abstract class HtmlUtil {
      * @return 変換後の文字列
      */
     public static String urlToHref(String value) {
-        return value.replaceAll("http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?", "<a href=\"$0\">$0</a>");
+        return value.replaceAll(
+                "http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w- ./?%&=]*)?",
+                "<a href=\"$0\">$0</a>");
     }
 }
